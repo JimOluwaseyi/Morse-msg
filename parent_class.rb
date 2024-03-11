@@ -7,4 +7,20 @@ class Person
     @id = id
     @parent_permission = parent_permission
   end
+
+  private
+
+  def of_age?
+    return true if @age >= 18
+
+    false
+  end
+
+  public
+
+  def can_use_services?
+    return false unless @age >= 18 || @parent_permission
+
+    true
+  end
 end

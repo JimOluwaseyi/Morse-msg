@@ -1,7 +1,9 @@
-class Person
+require './interface'
+class Person < Nameable
   attr_accessor :id, :name, :age
 
   def initialize(id, age, name = 'Unknown', parent_permission: true)
+    super
     @name = name
     @age = age
     @id = id
@@ -22,5 +24,9 @@ class Person
     return false unless @age >= 18 || @parent_permission
 
     true
+  end
+
+  def correct_name
+    @name
   end
 end

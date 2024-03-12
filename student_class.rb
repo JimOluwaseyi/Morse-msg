@@ -1,3 +1,5 @@
+require './parent_class'
+
 class Student < Person
   def initialize(id, age, classroom, name = 'Unknown', parent_permission: true)
     super(id, name, age, parent_permission)
